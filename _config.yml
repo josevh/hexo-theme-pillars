@@ -1,2 +1,3 @@
-pillars_blog_path: blog/
-pillars_blog_title: Blog
+pillars_path: blog/
+pillars_title: Blog
+pillars_layout: blog
