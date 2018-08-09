@@ -5,7 +5,7 @@ Based on Gatsby theme [Lumen](https://lumen.netlify.com/).
 ### Install
 
 ```bash
-$ git clone https://github.com/josevh/hexo-theme-clarity.git themes/clarity
+$ git clone https://github.com/josevh/hexo-theme-pillars.git
 ```
 
 ### Enable
@@ -15,6 +15,6 @@ Modify the `theme` setting in `_config.yml` to `pillars`.
 ### Update
 
 ```bash
-cd themes/clarity
+cd themes/pillars
 git pull
 ```
