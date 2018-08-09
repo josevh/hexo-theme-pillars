@@ -15,7 +15,7 @@ if (is_archive()) {
 %>
 <head>
     <meta charset="utf-8">
-    <title><%= title %> | <%= config.title %></title>
+    <title><%= title ? title + ' | ' : '' %><%= config.title %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <% if (config.author){ %>
     <meta name="author" content="<%= config.author %>">
