@@ -3,6 +3,7 @@ fonts = Source Sans Pro, Helvetica, Arial, sans-serif
 fontsMono = Source Code Pro, monospace
 fontColor = #515d5f
 linkColor = #6FC5FF
+ruleColor = #a8aeaf
 
 html
   font-size rootFontSize
@@ -81,6 +82,15 @@ a
     .line
       padding-left 5px
 
+.pull
+  &:after
+    display table-cell
+    clear both
+    content ''
+  &.right
+    float right
+  &.left
+    float left
 
 @media screen and (max-width 760px)
   #sidebar

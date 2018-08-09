@@ -1,3 +1,15 @@
 <h1 class="title"><%= page.title %></h1>
-<!-- timestamp, author, tags(?) -->
-<%- page.content %>
+<!-- TODO: timestamp, author, tags(?) -->
+<div id="blog-post">
+    <%- page.content %>
+
+    <div class="pagination"><!-- TODO: move to partial(?) -->
+        <% if (page.prev) { %>
+            <a class="pull left" href="<%- url_for(page.prev.path) %>">Prev</a>
+        <% } %>
+
+        <% if (page.next) { %>
+            <a class="pull right" href="<%- url_for(page.next.path) %>">Next</a>
+        <% } %>
+    </div>
+</div>
