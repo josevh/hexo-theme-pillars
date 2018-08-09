@@ -7,12 +7,12 @@ hexo.extend.generator.register('blog', function (locals) {
     }
 
     var title = (hexo.config.pillars_title|| hexo.theme.config.pillars_title);
-    var layouts = ['blog', 'index'].concat(hexo.config.pillars_layout|| hexo.theme.config.pillars_layout)
+    var layouts = [hexo.config.pillars_layout|| hexo.theme.config.pillars_layout].concat(['blog', 'index'])
 
     locals = Object.assign({}, locals, {title: title});
     return {
         path: path + 'index.html',
         data: locals,
-        layout: ['blog', 'index']
+        layout: layouts
     }
 });
