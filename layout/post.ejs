@@ -4,12 +4,12 @@
     <%- page.content %>
 
     <div class="pagination"><!-- TODO: move to partial(?) -->
-        <% if (page.prev) { %>
-            <a class="pull left" href="<%- url_for(page.prev.path) %>">Prev</a>
-        <% } %>
-
+        <!-- TODO: check if lang is current site lang -->
         <% if (page.next) { %>
-            <a class="pull right" href="<%- url_for(page.next.path) %>">Next</a>
+            <a class="pull left" href="<%- url_for(page.next.path) %>">Prev</a>
+        <% } %>
+        <% if (page.prev) { %>
+            <a class="pull right" href="<%- url_for(page.prev.path) %>">Next</a>
         <% } %>
     </div>
 </div>
