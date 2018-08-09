@@ -1,5 +1,7 @@
 <header>
-    <img class="brand" src="http://via.placeholder.com/100x100" alt="">
+    <% if (config.pillars_brand_img_path) { %>
+        <img class="brand" src="<%- config.pillars_brand_img_path %>" alt="">
+    <% } %>
     <h1 class="title"><%= config.title %></h1>
     <p class="description"><%= config.description %></p>
 </header>
