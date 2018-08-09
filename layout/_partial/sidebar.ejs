@@ -1,0 +1,16 @@
+<header>
+    <img class="brand" src="http://via.placeholder.com/100x100" alt="">
+    <h1 class="title"><%= config.title %></h1>
+    <p class="description"><%= config.description %></p>
+</header>
+<nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/experience">Experience</a></li>
+    </ul>
+</nav>
+<footer>
+    <div class="copyright">&copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %></div>
+</footer>

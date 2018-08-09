@@ -1,0 +1,90 @@
+rootFontSize = 16px
+fonts = Source Sans Pro, Helvetica, Arial, sans-serif
+fontsMono = Source Code Pro, monospace
+fontColor = #515d5f
+linkColor = #6FC5FF
+
+html
+  font-size rootFontSize
+  -ms-text-size-adjust 100%;
+  -webkit-text-size-adjust 100%;
+  -moz-osx-font-smoothing grayscale;
+  -webkit-font-smoothing antialiased;
+
+code
+  font-family: fontsMono
+  padding: 2px 4px
+  background: #e9ebeb
+  font-size: 0.875rem
+  border-radius: 2px
+  position: relative
+  top: -1px
+
+#top
+  padding 40px
+  position relative
+  margin 0 auto
+  max-width 960px
+  font-family fonts
+  color fontColor
+
+#sidebar
+  display inline-block
+  vertical-align top
+  width 250px
+  border-right 1px solid #ccc
+  padding-right 40px
+
+  header
+    .brand
+      display block
+      border-radius 50%
+      background-clip padding-box
+      max-width 75px
+    .title
+      font-size 1.125rem
+      line-height 1.82813rem
+      margin .8125rem 0
+    .description
+      line-height 1.625rem
+      margin-bottom 1.625rem
+
+  nav ul
+    padding-left 0
+    li
+      margin .625rem 0;
+  footer
+    .copyright
+      font-size .875rem
+      color #b6b6b6
+
+#content
+  display inline-block
+  vertical-align top
+  width calc(100% - 335px)
+  padding-left 40px
+  > h1.title
+    margin-top: 0
+
+a
+  color: linkColor
+  text-decoration none
+
+  &:hover, &:active
+    outline 0
+  &:hover
+    text-decoration underline
+
+@media screen and (max-width 760px)
+  #sidebar
+  #content
+    display block
+    width 100%
+    padding 0
+
+  #sidebar
+    border-right none
+
+@media screen and (max-width 414px)
+  #top
+    padding 20px

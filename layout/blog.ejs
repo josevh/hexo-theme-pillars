@@ -1,0 +1,28 @@
+<%
+var posts = page.posts.data
+        .filter(function (post) {
+            return post.lang === page.lang;
+        })
+        .sort(function (a, b) {
+            return b.date.valueOf() - a.date.valueOf();
+        });
+
+%>
+
+<h1 class="title"><%= page.title %></h1>
+<div id="blog-index">
+    <div class="posts">
+        <% var lastYear = null; %>
+        <% posts.forEach(function (post) { %>
+            <% if (post.date.year() !== lastYear) { %>
+                <h2 class="year"><%= post.date.year() %></h2>
+                <% lastYear = post.date.year() %>
+            <% } %>
+
+            <div class="post">
+                <div class="date"><%= date(post.date, 'MMM D') %></div><!--
+             --><div class="title"><a href="<%- url_for(post.path) %>"><%= post.title || '(no title)' %></a></div>
+            </div>
+        <% }) %>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<%
+var title = page.title;
+if (is_archive()) {
+    title = 'Archives';
+    if (is_month()) {
+        title += ': ' + page.year + '/' + page.month;
+    } else if (is_year()) {
+        title += ': ' + page.year;
+    }
+} else if (is_category()) {
+    title = 'Category: ' + page.category;
+} else if (is_tag()) {
+    title = 'Tag: ' + page.tag;
+}
+%>
+<head>
+    <meta charset="utf-8">
+    <title><%= title %> | <%= config.title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <% if (config.author){ %>
+    <meta name="author" content="<%= config.author %>">
+    <% } %>
+    <% if (config.description || page.excerpt){ %>
+    <meta name="description"
+          content="<% if (is_post() && page.excerpt){ %> <%= truncate(strip_html(page.excerpt), {length: 160}) %> <% } else { %> <%= config.description %> <% } %>">
+    <% } %>
+    <% if (theme.favicon){ %>
+    <link rel="icon" href="<%- url_for(theme.favicon) %>">
+    <% } %>
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <!--<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet" type="text/css">-->
+    <!--<link href="https://fonts.googleapis.com/css?family=Gentium+Book+Basic:300,400,700" rel="stylesheet"-->
+          <!--type="text/css">-->
+
+    <%- css('css/styles') %>
+    <%- partial('google-analytics') %>
+</head>
